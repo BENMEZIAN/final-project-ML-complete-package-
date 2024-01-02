@@ -1,6 +1,5 @@
 import tkinter as tk
-from tkinter import filedialog
-from tkinter import messagebox
+from tkinter import filedialog, messagebox
 from tkinter.scrolledtext import ScrolledText
 import pandas as pd
 import numpy as np

@@ -1,6 +1,8 @@
 import tkinter as tk
 from classification import Classification
 from clustering import Clustering
+from regression import Regression
+
 
 class Main:
     def __init__(self, master):
@@ -17,6 +19,9 @@ class Main:
         self.classification_button = tk.Button(master, text="Classification", command=self.open_classification,bg='green yellow', fg='black', font=('helvetica', 10, 'bold'), width=10)
         self.classification_button.place(x=500 - 20, y=120 - 20)
         
+        self.regression_button = tk.Button(master, text="Regression", command=self.open_regression,bg='turquoise', fg='black', font=('helvetica', 10, 'bold'), width=10)
+        self.regression_button.place(x=650 - 20, y=120 - 20)
+        
     
     def open_clustering(self):
         root = tk.Tk()
@@ -27,9 +32,13 @@ class Main:
         root = tk.Tk()
         interface = Classification(root)
         root.mainloop()
-
+    
+    def open_regression(self):
+        root = tk.Tk()
+        interface = Regression(root)
+        root.mainloop()
 
 if __name__ == "__main__":
     root = tk.Tk()
-    interface_selector = Main(root)
+    interface = Main(root)
     root.mainloop()
