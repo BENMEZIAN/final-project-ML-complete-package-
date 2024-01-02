@@ -17,13 +17,13 @@ class Regression:
         self.label.place(relx=0.5, rely=0.05, anchor="center")
 
         # Create buttons
-        self.import_button = tk.Button(master, text="Import Dataset", command=self.import_dataset, bg='green', fg='black',font=('helvetica', 10, 'bold'))
+        self.import_button = tk.Button(master, text="Import CSV file", command=self.import_dataset, bg='green', fg='black',font=('helvetica', 10, 'bold'))
         self.import_button.place(x=180, y=50)
 
         self.split_button = tk.Button(master, text="Split Dataset", command=self.split_dataset,bg='orange red', fg='black', font=('helvetica', 10, 'bold'))
         self.split_button.place(x=330, y=50)
 
-        self.run_regression_button = tk.Button(master, text="Run Logistic Regression",command=self.run_regression,bg='purple', fg='black', font=('helvetica', 10, 'bold'))
+        self.run_regression_button = tk.Button(master, text="Apply Logistic Regression",command=self.run_regression,bg='purple', fg='black', font=('helvetica', 10, 'bold'))
         self.run_regression_button.place(x=500, y=50)
 
         # Variable to store the dataset
@@ -55,7 +55,7 @@ class Regression:
             self.X_train_scaled = scaler.fit_transform(self.X_train)
             self.X_test_scaled = scaler.transform(self.X_test)
 
-            messagebox.showinfo("Success", "Dataset split successfully.")
+            messagebox.showinfo("Success", "Dataset has been split successfully.")
 
             # Enable the regression button
             self.run_regression_button.config(state=tk.NORMAL)
@@ -74,4 +74,4 @@ class Regression:
 
         # Display classification report
         report = classification_report(self.y_test, y_pred)
-        messagebox.showinfo("Classification Report", report)
+        messagebox.showinfo("Regression Report", report)
